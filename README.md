@@ -111,6 +111,6 @@ Katkılar memnuniyetle karşılanır! Herhangi bir iyileştirme veya hata düzel
 ![Statistics Screenshot](public/screenshots/statistics-dark.png)
 
 ### Mobile
-![Mobile Screenshot](public/screenshots/mobile.png)
-![Mobile Screenshot](public/screenshots/mobile2.png)
+![Mobile Screenshot](public/screenshots/mobile.jpg)
+![Mobile Screenshot](public/screenshots/mobile2.jpg)
 
