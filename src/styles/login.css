@@ -1,0 +1,332 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200..1000&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(228, 85%, 63%);
+  --title-color: hsl(228, 18%, 16%);
+  --text-color: hsl(228, 8%, 56%);
+  --body-color: hsl(228, 100%, 99%);
+  --shadow-color: hsla(228, 80%, 4%, .1);
+	--light: #F9F9F9;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Nunito Sans", system-ui;
+  ---font-poppins: 'Poppins', sans-serif;
+	--font-lato: 'Lato', sans-serif;
+  --normal-font-size: .938rem;
+  --smaller-font-size: .75rem;
+  --tiny-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-sidebar: 999;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --normal-font-size: 1rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  transition: background-color .4s;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  all: unset;
+}
+
+/*=============== VARIABLES DARK THEME ===============*/
+body.dark-theme{
+  --first-color: hsl(228, 70%, 63%);
+  --title-color: hsl(228, 18%, 96%);
+  --text-color: hsl(228, 12%, 61%);
+  --body-color: hsl(228, 24%, 16%);
+  --shadow-color: hsla(228, 80%, 4%, .3);
+}
+
+/*========== 
+	Color changes in some parts of 
+	the website, in dark theme
+==========*/
+.dark-theme .sidebar__content::-webkit-scrollbar{
+  background-color: hls(228, 16%, 30%);
+}
+
+.dark-theme .sidebar__content::-webkit-scrollbar-thumb{
+  background-color: hls(228, 16%, 40%);
+}
+
+.login-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2rem;
+    padding: 1.5rem;
+    height: 100vh;
+}
+
+.login-left-section {
+    width: 48%;
+    align-items: center;
+    display: flex;
+}
+
+.left-section-bg {
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.left-section-bg img {
+    width: 100%;
+    height: 95vh;
+ 
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.left-section-bg::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, rgba(31, 29, 29, 0.7), transparent);
+    border-radius: 16px;
+    
+}
+
+.left-section-bg .text-area {
+    position: absolute;
+    bottom: 15%; 
+    left: 50%; 
+    transform: translate(-50%, 0);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+}
+
+.left-section-bg .text-area h4 {
+  font-size: 22px;
+  font-family: var(--font-lato);
+} 
+
+.left-section-bg .text-area h6 {
+  font-size: 18px;
+  right: 0;
+  position: absolute;
+  right: 3rem;
+  width: fit-content;
+  font-family: var(--font-lato);
+} 
+
+.login-right-section {
+    width: 48%;
+    align-items: center;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-right-section .logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .4rem;
+  text-align: center;
+}
+
+.login-right-section .logo img{
+    width: 1.2rem;
+}
+
+.login-right-section .logo b{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #737373;
+}
+
+/* form css -START */
+
+.login-right-section .form-section{
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.login-right-section .form-head{
+  text-align: center;
+  font-size: 1.4rem;
+  border-bottom: 1rem;
+  font-weight: 600;
+  color: #23293a;
+}
+
+.login-right-section .input-container{
+  height: 65px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-right-section label{
+  margin-bottom: 4px;
+}
+
+.login-right-section .input-container input{
+  height: 50px;
+  border-radius: .31rem;
+  border: 1px solid #b2b5be;
+  padding: 0rem .31rem;
+}
+
+
+.login-right-section .loginButton{
+  background: #0c0c0c;
+  width: 100%;
+  color: white;
+  cursor: pointer;
+  height: 50px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.input-error {
+  border: 1px solid #ff4d4d !important;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+}
+
+
+/* form css -END */
+
+.login-right-section .register-section{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: .43rem;
+}
+
+.input-container {
+    margin-bottom: 1rem;
+}
+
+.button-container {
+    margin-top: 1.5rem;
+}
+
+.registerNavigatebutton{
+  font-size: 15px;
+  font-family: var(---font-poppins);
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .login-section {
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .login-left-section{
+    display: none;
+  }
+
+  .login-left-section, 
+  .login-right-section {
+      width: 100%;
+  }
+
+  .login-right-section {
+      padding: 1rem;
+      gap: 1rem;
+      height: 100vh;
+      align-items: center;
+  }
+
+  .left-section-bg img {
+      height: 50vh;
+  }
+
+  .left-section-bg .text-area {
+      bottom: 10%;
+      font-size: 1.2rem;
+      padding: 0 1rem;
+  }
+
+  .login-right-section .form-section {
+      width: 100%;
+  }
+
+  .login-right-section .form-head {
+      font-size: 1.2rem;
+  }
+
+  .login-right-section .input-container input {
+      height: 45px;
+  }
+
+  .login-right-section .loginButton {
+      height: 45px;
+  }
+
+  .login-right-section .register-section button {
+      font-size: 1rem;
+  }
+}
